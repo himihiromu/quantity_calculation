@@ -23,6 +23,9 @@
       <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
     </ul>
     <h3>Ecosystem</h3>
+    <form>
+    <UnitSelect v-model="selected" :options="options" />
+    </form>
     <ul>
       <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
       <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
@@ -43,6 +46,17 @@ import { Options, Vue } from 'vue-class-component'
 })
 export default class HelloWorld extends Vue {
   msg!: string
+  readonly options = [
+    { value: '単位を選択してください' },
+    { value: 'g' },
+    { value: 'ml' },
+    { value: 'cc' },
+    { value: '大さじ' },
+    { value: '小さじ' },
+    { value: 'カップ' },
+    { value: '合' },
+    { value: '個' }
+  ]
 }
 </script>
 
